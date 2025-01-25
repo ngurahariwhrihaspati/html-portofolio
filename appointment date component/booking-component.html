@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Section</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+        }
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .calendar-table th, .calendar-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .calendar-table th {
+            background-color: #f2f2f2;
+        }
+        .booking-menu {
+            display: flex;
+            flex-direction: column;
+        }
+        .booking-menu label {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .booking-menu input, .booking-menu select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .booking-menu button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <table class="calendar-table">
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="column">
+            <div class="booking-menu">
+                <label for="appointment-date">Select Appointment Date:</label>
+                <input type="date" id="appointment-date">
+                
+                <label for="appointment-time">Select Appointment Time:</label>
+                <input type="time" id="appointment-time">
+                
+                <label for="service">Select Service:</label>
+                <select id="service">
+                    <option value="service1">Service 1</option>
+                    <option value="service2">Service 2</option>
+                    <option value="service3">Service 3</option>
+                </select>
+                
+                <button onclick="bookAppointment()">Book Appointment</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function bookAppointment() {
+            const date = document.getElementById('appointment-date').value;
+            const time = document.getElementById('appointment-time').value;
+            const service = document.getElementById('service').value;
+            if (date && time && service) {
+                alert(`Appointment booked for ${date} at ${time} for ${service}`);
+            } else {
+                alert('Please select a date, time, and service.');
+            }
+        }
+    </script>
+</body>
+</html>
